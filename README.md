@@ -11,7 +11,7 @@ https://www.dropbox.com/sh/8bfq2p80h5wj20t/J_OZGOXolQ
 
 + [space] limpa tela
 + [up] aumenta percepção do contexto da captura
-+ [down] diminui percepção da contexto da captura
++ [down] diminui percepção do contexto da captura
 + [right] aumenta captura dos movimentos
 + [left] diminui captura dos movimentos
 + [d] debug: ativa/desativa painel de informações
