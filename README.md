@@ -7,7 +7,7 @@ Framework utilizando Processing.org para criar imagens com rastros dos movimento
 more samples:
 https://www.dropbox.com/sh/8bfq2p80h5wj20t/J_OZGOXolQ
 
-##keyboard:
+##Keyboard:
 
 + [space] limpa tela
 + [up] aumenta percepção do contexto da captura
@@ -16,3 +16,8 @@ https://www.dropbox.com/sh/8bfq2p80h5wj20t/J_OZGOXolQ
 + [left] diminui captura dos movimentos
 + [d] debug: ativa/desativa painel de informações
 + [s] salva imagem
+
+##Video:
+[![ScreenShot](http://b.vimeocdn.com/ts/340/530/340530845_640.jpg)](http://vimeo.com/49355849)
+
+Fluxos: https://gist.github.com/rafapolo/1273897
