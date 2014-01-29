@@ -17,7 +17,7 @@ https://www.dropbox.com/sh/8bfq2p80h5wj20t/J_OZGOXolQ
 + [d] debug: ativa/desativa painel de informações
 + [s] salva imagem
 
-##Video:
+##Video @ Praça Tiradentes - Rio de Janeiro:
 [![ScreenShot](http://b.vimeocdn.com/ts/340/530/340530845_640.jpg)](http://vimeo.com/49355849)
 
 Fluxos: https://gist.github.com/rafapolo/1273897
