@@ -1,51 +1,60 @@
-package traildentes;
+package rastros;
 
-import processing.core.*;
-import processing.video.*;
-
-import java.awt.Color;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-public class Traildentes extends PApplet {
+import processing.core.PApplet;
+import processing.core.PImage;
+import processing.video.Capture;
+
+public class Transmediale extends PApplet {
 	private static final long serialVersionUID = 1L;
 	
-	int rastroSize = 30;		
+	int rastroSize = 20;		
 	float threshold = 60;
 	boolean debug = true;
-	
-	Capture video;
+
+	Capture cam;
 	PImage prevFrame;
 	ArrayList<ArrayList<Ponto>> rastros = new ArrayList<ArrayList<Ponto>>();
-	
+
 	int t = 0;
 	
 	public void setup() {		 
-		size(800, 600);
+		size(900, 700);
 		textSize(20);
-		video = new Capture(this, width, height, 30);
-		video.settings();
-		prevFrame = createImage(video.width, video.height, RGB);
+		background(0);
+		frameRate(60);
+		smooth();
+	    
+        cam = new Capture(this, width, height, 30);
+        //cam.settings();
+		prevFrame = createImage(cam.width, cam.height, RGB);
+
 	}
 
+	  public static void main(String args[]) {
+		   PApplet.main(new String[] { "--present", Traildentes.class.getName() });
+	  }
+	
 	public void draw() {		
 		t++;
-		if (video.available()) {
-			prevFrame.copy(video, 0, 0, video.width, video.height, 0, 0, video.width, video.height);
-			prevFrame.updatePixels();
-			video.read();
+		if (cam.available()) {
+			prevFrame.copy(cam, 0, 0, cam.width, cam.height, 0, 0, cam.width, cam.height);
+			//prevFrame.updatePixels();
+			cam.read();
 		}
 
-		loadPixels();
-		video.loadPixels();
-		prevFrame.loadPixels();
+        //cam.loadPixels();
+        //prevFrame.loadPixels();
+        loadPixels();
 
 		ArrayList<Ponto> motionAtual = new ArrayList<Ponto>();
-		for (int x = 0; x < video.width; x++) {
-			for (int y = 0; y < video.height; y++) {
-				int loc = x + y * video.width; 												
-				int current = video.pixels[loc];												
+		for (int x = 0; x < cam.width; x++) {
+			for (int y = 0; y < cam.height; y++) {
+				int loc = x + y * cam.width;
+				int current = cam.pixels[loc];
 				int previous = prevFrame.pixels[loc];
 
 				float r1 = red(current);
@@ -58,7 +67,7 @@ public class Traildentes extends PApplet {
 
 				// How different are the colors?
 				if (diff > threshold) {									
-					Ponto atual = new Ponto(previous, loc);
+					Ponto atual = new Ponto(current, loc);
 					motionAtual.add(atual);
 				} else {
 					pixels[loc] = color(0);
@@ -66,7 +75,7 @@ public class Traildentes extends PApplet {
 			}
 		}
 		
-		if (t > rastroSize) { // after 50 draws
+		if (t > rastroSize) { // after x draws
 			rastros.add(motionAtual);
 			if(rastros.size()==rastroSize){ // array completo? excluir rastro 0
 				rastros.remove(0);
@@ -78,13 +87,19 @@ public class Traildentes extends PApplet {
 				// para cada motion
 				for (int y = 0; y < motion.size(); y++) {
 					// para cada ponto
-					Ponto ponto = motion.get(y);
-					Float R = (new Float(-x*x*10 +255) / rastroSize) * 255;
-					Float G = (new Float(-(x-rastroSize/2)*(x-rastroSize/2)*10+255) / rastroSize) * 105;
-					Float B = (new Float(-(x-rastroSize)*(x-rastroSize)*20+255) / rastroSize) * 55;
-					Float A = R;
-					Float cor = (new Float(x)/rastros.size())*255; 
-					pixels[ponto.getPosition()] = Math.round(ponto.getCor());
+                    Ponto ponto = motion.get(y);
+
+//                  Float R = (new Float(-x*x*10 +255) / rastroSize) * 255;
+//					Float G = (new Float(-(x-rastroSize/2)*(x-rastroSize/2)*10+255) / rastroSize) * 105;
+//					Float B = (new Float(-(x-rastroSize)*(x-rastroSize)*20+255) / rastroSize) * 55;
+//					Float A = R;
+//					Float cor = (new Float(x)/rastros.size())*255;
+
+                    int a = 255 / (x+1) ;
+                    //System.out.println(a);
+                    
+                    
+					pixels[ponto.getPosition()] = color(0,0,156, a);//Math.round(ponto.getCor());
 				}
 			}
 		}
@@ -95,6 +110,10 @@ public class Traildentes extends PApplet {
 			text("rastros: " + rastroSize, 10, 30);
 			text("contexto: " + threshold, 10, 60);
 		}
+	}
+	
+	boolean sketchFullScreen() {
+		return true;
 	}
 
 	public void keyPressed() {		
@@ -133,29 +152,3 @@ public class Traildentes extends PApplet {
 	}
 	
 }
-
-class Ponto{
-	int cor;
-	int position;
-	
-	public Ponto(int cor, int pos){
-		this.cor = cor;
-		this.position = pos;
-	}
-	
-	public int getCor() {
-		return cor;
-	}
-	public void setCor(int cor) {
-		this.cor = cor;
-	}
-	public int getPosition() {
-		return position;
-	}
-	public void setPosition(int position) {
-		this.position = position;
-	}
-	
-}
-
-
