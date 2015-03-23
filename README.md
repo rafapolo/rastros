@@ -1,4 +1,4 @@
-Rastros
+Rastros (Traces in Portuguese)
 =======
 Flexible App built with Processing.org Framework to capture imagens with movement's traces.
 
