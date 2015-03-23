@@ -1,6 +1,6 @@
-Rastros (Traces in Portuguese)
+Rastros
 =======
-Flexible App built with Processing.org Framework to capture imagens with movement's traces.
+Traces, in Portuguese, is a flexible App built with Processing.org Framework to capture imagens with movement's traces.
 
 ![sample](http://extrapolo.com/docs/rastro.jpg)
 
