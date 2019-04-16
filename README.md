@@ -4,7 +4,10 @@ Traces, in Portuguese, is a flexible App built with Processing.org Framework to 
 
 ![sample](http://extrapolo.com/docs/rastro.jpg)
 
-##Keyboard:
+## Video @ Praça Tiradentes - Rio de Janeiro:
+[![ScreenShot](http://b.vimeocdn.com/ts/340/530/340530845_640.jpg)](http://vimeo.com/49355849)
+
+## Keyboard:
 
 + [space] clean screen
 + [up] increase context sensibility
@@ -14,7 +17,4 @@ Traces, in Portuguese, is a flexible App built with Processing.org Framework to 
 + [d] debug: enable/desable info panel
 + [s] save image
 
-##Video @ Praça Tiradentes - Rio de Janeiro:
-[![ScreenShot](http://b.vimeocdn.com/ts/340/530/340530845_640.jpg)](http://vimeo.com/49355849)
-
-Fluxos: https://gist.github.com/rafapolo/1273897
+Fluxos Variation: https://gist.github.com/rafapolo/1273897
