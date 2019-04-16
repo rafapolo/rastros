@@ -4,9 +4,6 @@ Traces, in Portuguese, is a flexible App built with Processing.org Framework to 
 
 ![sample](http://extrapolo.com/docs/rastro.jpg)
 
-more samples:
-https://www.dropbox.com/sh/8bfq2p80h5wj20t/J_OZGOXolQ
-
 ##Keyboard:
 
 + [space] clean screen
