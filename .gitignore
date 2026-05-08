@@ -1,0 +1,12 @@
+# Eclipse
+.classpath
+.project
+.settings/
+bin/
+
+# Build output
+*.class
+out/
+
+# macOS
+.DS_Store

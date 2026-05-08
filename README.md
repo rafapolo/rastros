@@ -1,20 +1,30 @@
-Rastros
-=======
-Traces, in Portuguese, is a flexible App built with Processing.org Framework to capture imagens with movements.
+# Rastros
+
+**Traces** (Portuguese) — a flexible app built with the [Processing](https://processing.org) framework to capture images through movement.
 
 ![sample](http://extrapolo.com/docs/rastro.jpg)
 
-## Video @ Praça Tiradentes - Rio de Janeiro:
-[![ScreenShot](http://b.vimeocdn.com/ts/340/530/340530845_640.jpg)](http://vimeo.com/49355849)
+## Demo — Praça Tiradentes, Rio de Janeiro
 
-## Keyboard:
+[![Watch on Vimeo](https://vimeocdn.com/video/408307560_640.jpg)](https://vimeo.com/manage/videos/408307560)
 
-+ [space] clean screen
-+ [up] increase context sensibility
-+ [down] decrease context sensibility
-+ [right] increase moviment's capture
-+ [left] decrease moviment's capture
-+ [d] debug: enable/desable info panel
-+ [s] save image
+## Requirements
 
-Fluxos Variation: https://gist.github.com/rafapolo/1273897
+- [Processing 3+](https://processing.org/download)
+- [Processing Video Library 2.x](https://processing.org/reference/libraries/video/) (`lib/video.jar`)
+
+## Keyboard Controls
+
+| Key | Action |
+|-----|--------|
+| `Space` | Clear screen |
+| `↑` | Increase context sensitivity |
+| `↓` | Decrease context sensitivity |
+| `→` | Increase movement capture |
+| `←` | Decrease movement capture |
+| `D` | Toggle debug info panel |
+| `S` | Save image to Desktop |
+
+## Variations
+
+[Fluxos Variation](https://gist.github.com/rafapolo/1273897)
